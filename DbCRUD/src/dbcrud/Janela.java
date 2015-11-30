@@ -13,6 +13,7 @@ import tabelas.*;
 /**
  *
  * @author Tomás Abril
+ * @author Daniel Silva Curi
  */
 public class Janela extends javax.swing.JFrame {
 
