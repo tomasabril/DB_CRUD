@@ -346,7 +346,7 @@ public class Janela extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        insercaoLivro.setMinimumSize(new java.awt.Dimension(400, 500));
+        insercaoLivro.setMinimumSize(new java.awt.Dimension(400, 600));
         insercaoLivro.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel14.setText("inserir livro");
@@ -547,7 +547,8 @@ public class Janela extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        alterLivro.setMinimumSize(new java.awt.Dimension(400, 300));
+        alterLivro.setMinimumSize(new java.awt.Dimension(400, 600));
+        alterLivro.setPreferredSize(new java.awt.Dimension(400, 600));
 
         jLabel19.setText("alter livro");
 
@@ -686,7 +687,7 @@ public class Janela extends javax.swing.JFrame {
 
         excludeLivro.setMinimumSize(new java.awt.Dimension(400, 300));
 
-        jLabel22.setText("Exclude Genero");
+        jLabel22.setText("Exclude Livro");
 
         jLabel23.setText("ID do objeto a ser excluido:");
 
@@ -956,10 +957,13 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        //consulta
+        findLivro.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
+        excludeLivro.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -1014,6 +1018,9 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
+                        //find
+        Livros livro = em.find(Livros.class, Integer.parseInt(jTextField9.getText()));
+        jTextArea2.setText(livro.toString());
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -1029,16 +1036,22 @@ public class Janela extends javax.swing.JFrame {
 //        private Double PRECO;
 //        private Integer ESTOQUE;
 //        private Integer RESERVA;
-
         em.getTransaction().begin();
         livros.setTITULO(jTextField11.getText());
         em.getTransaction().commit();
 
-        alterLivro.setVisible(true);
+        alterLivro.setVisible(false);
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
+        //excluir
+        Livros livro = em.find(Livros.class, Integer.parseInt(jTextField12.getText()));
+        em.getTransaction().begin();
+        em.remove(livro);
+        em.getTransaction().commit();
+
+        excludeLivro.setVisible(false);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
