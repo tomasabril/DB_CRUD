@@ -123,6 +123,40 @@ public class Janela extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jButton20 = new javax.swing.JButton();
+        insercaoPedido = new javax.swing.JDialog();
+        jLabel43 = new javax.swing.JLabel();
+        jButton33 = new javax.swing.JButton();
+        jLabel44 = new javax.swing.JLabel();
+        jTextField29 = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jTextField30 = new javax.swing.JTextField();
+        jTextField35 = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jTextField36 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        findPedido = new javax.swing.JDialog();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jTextField31 = new javax.swing.JTextField();
+        jButton34 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        alterPedido = new javax.swing.JDialog();
+        jLabel48 = new javax.swing.JLabel();
+        jButton35 = new javax.swing.JButton();
+        jLabel49 = new javax.swing.JLabel();
+        jTextField32 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
+        jTextField37 = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
+        jTextField38 = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        excludePedido = new javax.swing.JDialog();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jTextField34 = new javax.swing.JTextField();
+        jButton36 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -729,6 +763,265 @@ public class Janela extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        insercaoPedido.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jLabel43.setText("Genero");
+
+        jButton33.setText("inserir");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+
+        jLabel44.setText("USUARIO_ID");
+
+        jLabel45.setText("PEDIDO_ID");
+
+        jTextField35.setText("2008-7-04");
+        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField35ActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setText("data pedido(tipo mysql DATE)");
+
+        jLabel54.setText("tipo pagamento(small int)");
+
+        javax.swing.GroupLayout insercaoPedidoLayout = new javax.swing.GroupLayout(insercaoPedido.getContentPane());
+        insercaoPedido.getContentPane().setLayout(insercaoPedidoLayout);
+        insercaoPedidoLayout.setHorizontalGroup(
+            insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                .addGroup(insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel43))
+                    .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jButton33))
+                    .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel53)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel54)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(145, Short.MAX_VALUE))
+        );
+        insercaoPedidoLayout.setVerticalGroup(
+            insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(insercaoPedidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel43)
+                .addGap(27, 27, 27)
+                .addGroup(insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(insercaoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(jButton33)
+                .addContainerGap())
+        );
+
+        findPedido.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jLabel46.setText("Find:");
+
+        jLabel47.setText("ID");
+
+        jButton34.setText("Find");
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
+
+        javax.swing.GroupLayout findPedidoLayout = new javax.swing.GroupLayout(findPedido.getContentPane());
+        findPedido.getContentPane().setLayout(findPedidoLayout);
+        findPedidoLayout.setHorizontalGroup(
+            findPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(findPedidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(findPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel47)
+                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, findPedidoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton34)
+                .addGap(169, 169, 169))
+        );
+        findPedidoLayout.setVerticalGroup(
+            findPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(findPedidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(findPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(findPedidoLayout.createSequentialGroup()
+                        .addComponent(jLabel46)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton34)
+                .addContainerGap())
+        );
+
+        alterPedido.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jLabel48.setText("alter pedido");
+
+        jButton35.setText("Alter");
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
+
+        jLabel49.setText("PEDIDO_ID do campo para alterar");
+
+        jLabel50.setText("USUARIO_ID");
+
+        jLabel55.setText("data pedido");
+
+        jLabel56.setText("tipo pagamento(string)");
+
+        javax.swing.GroupLayout alterPedidoLayout = new javax.swing.GroupLayout(alterPedido.getContentPane());
+        alterPedido.getContentPane().setLayout(alterPedidoLayout);
+        alterPedidoLayout.setHorizontalGroup(
+            alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(alterPedidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel48)
+                    .addGroup(alterPedidoLayout.createSequentialGroup()
+                        .addComponent(jLabel49)
+                        .addGroup(alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(alterPedidoLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jButton35))
+                            .addGroup(alterPedidoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(alterPedidoLayout.createSequentialGroup()
+                        .addComponent(jLabel50)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(alterPedidoLayout.createSequentialGroup()
+                        .addComponent(jLabel55)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(alterPedidoLayout.createSequentialGroup()
+                        .addComponent(jLabel56)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+        alterPedidoLayout.setVerticalGroup(
+            alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(alterPedidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel48)
+                .addGap(18, 18, 18)
+                .addGroup(alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(alterPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(jButton35)
+                .addContainerGap())
+        );
+
+        excludePedido.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jLabel51.setText("Exclude Pedido");
+
+        jLabel52.setText("ID do objeto a ser excluido:");
+
+        jButton36.setText("Exclude");
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout excludePedidoLayout = new javax.swing.GroupLayout(excludePedido.getContentPane());
+        excludePedido.getContentPane().setLayout(excludePedidoLayout);
+        excludePedidoLayout.setHorizontalGroup(
+            excludePedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(excludePedidoLayout.createSequentialGroup()
+                .addGroup(excludePedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(excludePedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(excludePedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel52)
+                            .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(excludePedidoLayout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jButton36)))
+                .addContainerGap(178, Short.MAX_VALUE))
+        );
+        excludePedidoLayout.setVerticalGroup(
+            excludePedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(excludePedidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel51)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addComponent(jButton36)
+                .addGap(19, 19, 19))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CRUD em JPA");
 
@@ -978,18 +1271,22 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
+        findPedido.setVisible(true);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
+        excludePedido.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
+        alterPedido.setVisible(true);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
+        insercaoPedido.setVisible(true);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -1018,7 +1315,7 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
-                        //find
+        //find
         Livros livro = em.find(Livros.class, Integer.parseInt(jTextField9.getText()));
         jTextArea2.setText(livro.toString());
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -1057,6 +1354,61 @@ public class Janela extends javax.swing.JFrame {
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        // TODO add your handling code here:
+        Pedidos pedido = new Pedidos();
+//            private Integer PEDIDO_ID;
+//            private Integer USUARIO_ID;
+//            private String DATA_PEDIDO;
+//            private String TIPO_PAG;
+
+        pedido.setPEDIDO_ID(Integer.parseInt(jTextField30.getText()));
+        pedido.setUSUARIO_ID(Integer.parseInt(jTextField29.getText()));
+        pedido.setDATA_PEDIDO(jTextField35.getText());
+        pedido.setTIPO_PAG(jTextField36.getText());
+
+        em.getTransaction().begin();
+        em.persist(pedido);
+        em.getTransaction().commit();
+
+        insercaoPedido.setVisible(false);
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        // TODO add your handling code here:
+        //find
+        Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(jTextField31.getText()));
+        jTextArea3.setText(pedido.toString());
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        // TODO add your handling code here:
+        Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(jTextField32.getText()));
+
+        em.getTransaction().begin();
+        pedido.setUSUARIO_ID(Integer.parseInt(jTextField33.getText()));
+        pedido.setDATA_PEDIDO(jTextField37.getText());
+        pedido.setTIPO_PAG(jTextField38.getText());
+        em.getTransaction().commit();
+
+        alterPedido.setVisible(false);
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        //excluir
+        Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(jTextField34.getText()));
+        
+        em.getTransaction().begin();
+        em.remove(pedido);
+        em.getTransaction().commit();
+
+        excludePedido.setVisible(false);
+    }//GEN-LAST:event_jButton36ActionPerformed
+
+    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField35ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1116,12 +1468,16 @@ public class Janela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog alterGenero;
     private javax.swing.JDialog alterLivro;
+    private javax.swing.JDialog alterPedido;
     private javax.swing.JDialog excludeGenero;
     private javax.swing.JDialog excludeLivro;
+    private javax.swing.JDialog excludePedido;
     private javax.swing.JDialog findGenero;
     private javax.swing.JDialog findLivro;
+    private javax.swing.JDialog findPedido;
     private javax.swing.JDialog insercaoGenero;
     private javax.swing.JDialog insercaoLivro;
+    private javax.swing.JDialog insercaoPedido;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1136,6 +1492,10 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -1176,15 +1536,31 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -1206,7 +1582,17 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
+    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
