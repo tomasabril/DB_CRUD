@@ -478,7 +478,7 @@ public class Janela extends javax.swing.JFrame {
         //find
         Generos genero = em.find(Generos.class, Integer.parseInt(jTextField2.getText()));
         jTextArea1.setText(genero.getDESCRICAO());
-        findGenero.setVisible(false);
+        //findGenero.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
