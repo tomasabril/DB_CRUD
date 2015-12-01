@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dbcrud;
 
 import javax.persistence.EntityManager;
@@ -23,9 +18,7 @@ public class Janela extends javax.swing.JFrame {
     int x = 2;
     JPanel lastpanel = new JPanel();
 
-    /**
-     * Creates new form Janela
-     */
+
     public Janela() {
         initComponents();
 
@@ -99,7 +92,7 @@ public class Janela extends javax.swing.JFrame {
         diag_cons_liv = new javax.swing.JDialog();
         jLabel18 = new javax.swing.JLabel();
         cons_liv_id = new javax.swing.JTextField();
-        cons_liv__but = new javax.swing.JButton();
+        cons_liv_but = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         cons_liv_res = new javax.swing.JTextArea();
         diag_cons_ped = new javax.swing.JDialog();
@@ -112,8 +105,11 @@ public class Janela extends javax.swing.JFrame {
         alt_gen_but = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         alt_gen_id = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         alt_gen_desc = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        alt_gen_err = new javax.swing.JLabel();
         diag_alt_liv = new javax.swing.JDialog();
         alt_liv_but = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
@@ -137,6 +133,7 @@ public class Janela extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         alt_liv_ano = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         diag_alt_ped = new javax.swing.JDialog();
         alt_ped_but = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
@@ -148,6 +145,7 @@ public class Janela extends javax.swing.JFrame {
         alt_ped_dat = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         alt_ped_pag = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         diag_exc_gen = new javax.swing.JDialog();
         jLabel11 = new javax.swing.JLabel();
         exc_gen_id = new javax.swing.JTextField();
@@ -232,7 +230,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_ins_liv.setTitle("Inserir Livro");
-        diag_ins_liv.setMaximumSize(null);
         diag_ins_liv.setModal(true);
         diag_ins_liv.setResizable(false);
 
@@ -366,7 +363,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_ins_ped.setTitle("Inserir Pedido");
-        diag_ins_ped.setMaximumSize(null);
         diag_ins_ped.setMinimumSize(null);
         diag_ins_ped.setModal(true);
         diag_ins_ped.setResizable(false);
@@ -442,7 +438,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_cons_gen.setTitle("Consultar Gêneros");
-        diag_cons_gen.setMaximumSize(null);
         diag_cons_gen.setMinimumSize(null);
         diag_cons_gen.setModal(true);
         diag_cons_gen.setResizable(false);
@@ -493,17 +488,16 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_cons_liv.setTitle("Consultar Livros");
-        diag_cons_liv.setMaximumSize(null);
         diag_cons_liv.setMinimumSize(null);
         diag_cons_liv.setModal(true);
         diag_cons_liv.setResizable(false);
 
         jLabel18.setText("ID:");
 
-        cons_liv__but.setText("Consultar");
-        cons_liv__but.addActionListener(new java.awt.event.ActionListener() {
+        cons_liv_but.setText("Consultar");
+        cons_liv_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cons_liv__butActionPerformed(evt);
+                cons_liv_butActionPerformed(evt);
             }
         });
 
@@ -526,7 +520,7 @@ public class Janela extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cons_liv__but)
+                        .addComponent(cons_liv_but)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -538,14 +532,13 @@ public class Janela extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cons_liv__but)))
+                        .addComponent(cons_liv_but)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_cons_ped.setTitle("Consultar Pedidos");
-        diag_cons_ped.setMaximumSize(null);
         diag_cons_ped.setMinimumSize(null);
         diag_cons_ped.setModal(true);
         diag_cons_ped.setResizable(false);
@@ -602,6 +595,7 @@ public class Janela extends javax.swing.JFrame {
         diag_alt_gen.setResizable(false);
 
         alt_gen_but.setText("Alterar");
+        alt_gen_but.setEnabled(false);
         alt_gen_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alt_gen_butActionPerformed(evt);
@@ -610,7 +604,41 @@ public class Janela extends javax.swing.JFrame {
 
         jLabel6.setText("ID:");
 
-        jLabel7.setText("Nova Descrição:");
+        alt_gen_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alt_gen_idActionPerformed(evt);
+            }
+        });
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Novos dados"));
+
+        alt_gen_desc.setEnabled(false);
+
+        jLabel7.setText("Descrição:");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel7)
+                .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jButton1.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout diag_alt_genLayout = new javax.swing.GroupLayout(diag_alt_gen.getContentPane());
         diag_alt_gen.getContentPane().setLayout(diag_alt_genLayout);
@@ -618,30 +646,37 @@ public class Janela extends javax.swing.JFrame {
             diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_genLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(diag_alt_genLayout.createSequentialGroup()
+                        .addComponent(alt_gen_err)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(alt_gen_but))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_genLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(alt_gen_but)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
                 .addContainerGap())
         );
         diag_alt_genLayout.setVerticalGroup(
             diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_genLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alt_gen_but)
+                .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(alt_gen_err)
+                    .addGroup(diag_alt_genLayout.createSequentialGroup()
+                        .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_gen_but)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -662,21 +697,39 @@ public class Janela extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Novos dados"));
 
+        alt_liv_gen.setEnabled(false);
+
         jLabel35.setText("GENERO_ID:");
+
+        alt_liv_des.setEnabled(false);
 
         jLabel36.setText("Descrição:");
 
+        alt_liv_res.setEnabled(false);
+
         jLabel37.setText("Reserva:");
+
+        alt_liv_pre.setEnabled(false);
 
         jLabel38.setText("Preço:");
 
         jLabel21.setText("Título:");
 
+        alt_liv_est.setEnabled(false);
+
+        alt_liv_tit.setEnabled(false);
+
         jLabel39.setText("Estoque:");
+
+        alt_liv_aut.setEnabled(false);
 
         jLabel32.setText("Autor:");
 
+        alt_liv_edi.setEnabled(false);
+
         jLabel33.setText("Editora:");
+
+        alt_liv_ano.setEnabled(false);
 
         jLabel34.setText("Ano:");
 
@@ -760,6 +813,9 @@ public class Janela extends javax.swing.JFrame {
                     .addComponent(alt_liv_des, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        jButton2.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jButton2.setText("Consultar");
+
         javax.swing.GroupLayout diag_alt_livLayout = new javax.swing.GroupLayout(diag_alt_liv.getContentPane());
         diag_alt_liv.getContentPane().setLayout(diag_alt_livLayout);
         diag_alt_livLayout.setHorizontalGroup(
@@ -770,7 +826,9 @@ public class Janela extends javax.swing.JFrame {
                     .addGroup(diag_alt_livLayout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
                     .addComponent(alt_liv_but)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -781,7 +839,8 @@ public class Janela extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -808,9 +867,15 @@ public class Janela extends javax.swing.JFrame {
 
         jLabel50.setText("USUARIO_ID:");
 
+        alt_ped_usu.setEnabled(false);
+
         jLabel55.setText("Data:");
 
+        alt_ped_dat.setEnabled(false);
+
         jLabel56.setText("Pagamento:");
+
+        alt_ped_pag.setEnabled(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -823,7 +888,7 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alt_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(alt_ped_usu, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel55)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -845,20 +910,32 @@ public class Janela extends javax.swing.JFrame {
                     .addComponent(jLabel56)))
         );
 
+        jButton3.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jButton3.setText("Consultar");
+
         javax.swing.GroupLayout diag_alt_pedLayout = new javax.swing.GroupLayout(diag_alt_ped.getContentPane());
         diag_alt_ped.getContentPane().setLayout(diag_alt_pedLayout);
         diag_alt_pedLayout.setHorizontalGroup(
             diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_pedLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(alt_ped_but)
+                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                        .addComponent(jLabel49)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(diag_alt_pedLayout.createSequentialGroup()
+                                .addGap(145, 145, 145)
+                                .addComponent(alt_ped_but))
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_pedLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_pedLayout.createSequentialGroup()
+                                .addComponent(jLabel49)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap())
         );
         diag_alt_pedLayout.setVerticalGroup(
             diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -867,7 +944,9 @@ public class Janela extends javax.swing.JFrame {
                 .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel49))
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alt_ped_but)
@@ -918,7 +997,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_exc_liv.setTitle("Excluir Livro");
-        diag_exc_liv.setMaximumSize(null);
         diag_exc_liv.setMinimumSize(null);
         diag_exc_liv.setModal(true);
         diag_exc_liv.setResizable(false);
@@ -959,7 +1037,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_exc_ped.setTitle("Excluir Pedido");
-        diag_exc_ped.setMaximumSize(null);
         diag_exc_ped.setMinimumSize(null);
         diag_exc_ped.setModal(true);
         diag_exc_ped.setResizable(false);
@@ -1058,8 +1135,8 @@ public class Janela extends javax.swing.JFrame {
                 .addComponent(cons_gen))
         );
 
-        opc_panel.setLayer(gen_pan, 1);
         opc_panel.add(gen_pan);
+        opc_panel.setLayer(gen_pan, 1);
 
         liv_pan.setBackground(new java.awt.Color(190, 193, 199));
 
@@ -1300,6 +1377,7 @@ public class Janela extends javax.swing.JFrame {
             //findGenero.setVisible(false);
         } catch (Exception e) {
             System.out.println(e);
+            cons_gen_res.setText("[!] Gênero não encontrado.");
         }
     }//GEN-LAST:event_cons_gen_butActionPerformed
 
@@ -1415,14 +1493,15 @@ public class Janela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ins_liv_butActionPerformed
 
-    private void cons_liv__butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_liv__butActionPerformed
+    private void cons_liv_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_liv_butActionPerformed
         try {
             Livros livro = em.find(Livros.class, Integer.parseInt(cons_liv_id.getText()));
             cons_liv_res.setText(livro.toString());
         } catch (Exception e) {
             System.out.println(e);
+            cons_liv_res.setText("[!] Livro não encontrado");
         }
-    }//GEN-LAST:event_cons_liv__butActionPerformed
+    }//GEN-LAST:event_cons_liv_butActionPerformed
 
     private void alt_liv_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_liv_butActionPerformed
         try {
@@ -1488,6 +1567,7 @@ public class Janela extends javax.swing.JFrame {
             cons_ped_res.setText(pedido.toString());
         } catch (Exception e) {
             System.out.println(e);
+            cons_ped_res.setText("[!] Pedido não encontrado");
         }
     }//GEN-LAST:event_cons_ped_butActionPerformed
 
@@ -1537,6 +1617,33 @@ public class Janela extends javax.swing.JFrame {
     private void ped_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ped_butActionPerformed
         trocaTela(ped_pan);
     }//GEN-LAST:event_ped_butActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            Generos genero = em.find(Generos.class, Integer.parseInt(alt_gen_id.getText()));
+            //Setar campos
+            alt_gen_desc.setText(genero.getDESCRICAO());
+            //Habilitar campos
+            alt_gen_desc.enable();
+            //Setar label de erro e habilitar botão
+            alt_gen_err.setText("");
+            alt_gen_but.setEnabled(true);
+            
+        } catch (Exception e) {
+            System.out.println(e);
+            //Setar campos
+            alt_gen_err.setText("[!] Gênero não encontrado.");
+            //Desabilitar campos
+            alt_gen_desc.disable();
+            //Setar label de erro e desabilitar botão
+            alt_gen_desc.setText("");
+            alt_gen_but.setEnabled(false);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void alt_gen_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_gen_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alt_gen_idActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1600,6 +1707,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton alt_gen;
     private javax.swing.JButton alt_gen_but;
     private javax.swing.JTextField alt_gen_desc;
+    private javax.swing.JLabel alt_gen_err;
     private javax.swing.JTextField alt_gen_id;
     private javax.swing.JButton alt_liv;
     private javax.swing.JTextField alt_liv_ano;
@@ -1625,7 +1733,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField cons_gen_id;
     private javax.swing.JTextArea cons_gen_res;
     private javax.swing.JButton cons_liv;
-    private javax.swing.JButton cons_liv__but;
+    private javax.swing.JButton cons_liv_but;
     private javax.swing.JTextField cons_liv_id;
     private javax.swing.JTextArea cons_liv_res;
     private javax.swing.JButton cons_ped;
@@ -1677,6 +1785,9 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField ins_ped_pag;
     private javax.swing.JTextField ins_ped_ped;
     private javax.swing.JTextField ins_ped_usu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
@@ -1719,6 +1830,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
