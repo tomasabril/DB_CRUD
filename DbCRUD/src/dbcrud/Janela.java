@@ -19,8 +19,8 @@ public class Janela extends javax.swing.JFrame {
 
     EntityManagerFactory emf;
     EntityManager em;
-    
-    int x=2;
+
+    int x = 2;
     JPanel lastpanel = new JPanel();
 
     /**
@@ -32,22 +32,16 @@ public class Janela extends javax.swing.JFrame {
         //fazer conexao com o banco de dados
         emf = Persistence.createEntityManagerFactory("DbCRUDPU");
         em = emf.createEntityManager();
-        
-        
+
         lastpanel = gen_pan;
     }
-    
-    
-        private void trocaTela(JPanel newpanel){
+
+    private void trocaTela(JPanel newpanel) {
         lastpanel.setVisible(false);
         newpanel.setVisible(true);
         lastpanel = newpanel;
         opc_panel.setLayer(lastpanel, x++);
     }
-    
-    
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1007,7 +1001,6 @@ public class Janela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CRUD em JPA");
-        setLocation(new java.awt.Point(0, 0));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(190, 193, 199));
@@ -1065,8 +1058,8 @@ public class Janela extends javax.swing.JFrame {
                 .addComponent(cons_gen))
         );
 
-        opc_panel.add(gen_pan);
         opc_panel.setLayer(gen_pan, 1);
+        opc_panel.add(gen_pan);
 
         liv_pan.setBackground(new java.awt.Color(190, 193, 199));
 
@@ -1272,22 +1265,26 @@ public class Janela extends javax.swing.JFrame {
         diag_ins_gen.pack();
         diag_ins_gen.setLocationRelativeTo(null);
         diag_ins_gen.setVisible(true);
-        
+
     }//GEN-LAST:event_ins_genActionPerformed
 
     private void ins_gen_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_gen_butActionPerformed
-        Generos genero = new Generos();
-        
-        genero.setGENERO_ID(Integer.parseInt(ins_gen_id.getText()));
-        genero.setDESCRICAO(ins_gen_desc.getText());
-        
-        em.getTransaction().begin();
-        em.persist(genero);
-        em.getTransaction().commit();
-        
-        diag_ins_gen.pack();
-        diag_ins_gen.setLocationRelativeTo(null);
-        diag_ins_gen.setVisible(false);
+        try {
+            Generos genero = new Generos();
+
+            genero.setGENERO_ID(Integer.parseInt(ins_gen_id.getText()));
+            genero.setDESCRICAO(ins_gen_desc.getText());
+
+            em.getTransaction().begin();
+            em.persist(genero);
+            em.getTransaction().commit();
+
+            diag_ins_gen.pack();
+            diag_ins_gen.setLocationRelativeTo(null);
+            diag_ins_gen.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_ins_gen_butActionPerformed
 
     private void cons_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_genActionPerformed
@@ -1297,9 +1294,13 @@ public class Janela extends javax.swing.JFrame {
     }//GEN-LAST:event_cons_genActionPerformed
 
     private void cons_gen_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_gen_butActionPerformed
-        Generos genero = em.find(Generos.class, Integer.parseInt(cons_gen_id.getText()));
-        cons_gen_res.setText(genero.getDESCRICAO());
-        //findGenero.setVisible(false);
+        try {
+            Generos genero = em.find(Generos.class, Integer.parseInt(cons_gen_id.getText()));
+            cons_gen_res.setText(genero.getDESCRICAO());
+            //findGenero.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_cons_gen_butActionPerformed
 
     private void alt_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_genActionPerformed
@@ -1309,22 +1310,30 @@ public class Janela extends javax.swing.JFrame {
     }//GEN-LAST:event_alt_genActionPerformed
 
     private void alt_gen_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_gen_butActionPerformed
-        Generos genero = em.find(Generos.class, Integer.parseInt(alt_gen_id.getText()));
+        try {
+            Generos genero = em.find(Generos.class, Integer.parseInt(alt_gen_id.getText()));
 
-        em.getTransaction().begin();
-          genero.setDESCRICAO(alt_gen_desc.getText());
-        em.getTransaction().commit();
+            em.getTransaction().begin();
+            genero.setDESCRICAO(alt_gen_desc.getText());
+            em.getTransaction().commit();
 
-        diag_alt_gen.setVisible(false);
+            diag_alt_gen.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_alt_gen_butActionPerformed
 
     private void exc_gen_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_gen_butActionPerformed
-        Generos genero = em.find(Generos.class, Integer.parseInt(exc_gen_id.getText()));
-        em.getTransaction().begin();
-        em.remove(genero);
-        em.getTransaction().commit();
+        try {
+            Generos genero = em.find(Generos.class, Integer.parseInt(exc_gen_id.getText()));
+            em.getTransaction().begin();
+            em.remove(genero);
+            em.getTransaction().commit();
 
-        diag_exc_gen.setVisible(false);
+            diag_exc_gen.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_exc_gen_butActionPerformed
 
     private void exc_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_genActionPerformed
@@ -1382,56 +1391,72 @@ public class Janela extends javax.swing.JFrame {
     }//GEN-LAST:event_ins_pedActionPerformed
 
     private void ins_liv_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_liv_butActionPerformed
-        Livros livro = new Livros();
-        
-        livro.setLIVRO_ID(Integer.parseInt(ins_liv_id.getText()));
-        livro.setTITULO(ins_liv_tit.getText());
-        livro.setAUTOR(ins_liv_aut.getText());
-        livro.setEDITORA(ins_liv_edi.getText());
-        livro.setANO(Integer.parseInt(ins_liv_ano.getText()));
-        livro.setGENERO_ID(Integer.parseInt(ins_liv_gen.getText()));
-        livro.setDESCRICAO(ins_liv_des.getText());
-        livro.setPRECO(Double.parseDouble(ins_liv_pre.getText()));
-        livro.setESTOQUE(Integer.parseInt(ins_liv_est.getText()));
-        livro.setRESERVA(Integer.parseInt(ins_liv_res.getText()));
-        
-        em.getTransaction().begin();
-        em.persist(livro);
-        em.getTransaction().commit();
-        
-        diag_ins_liv.setVisible(false);
+        try {
+            Livros livro = new Livros();
+
+            livro.setLIVRO_ID(Integer.parseInt(ins_liv_id.getText()));
+            livro.setTITULO(ins_liv_tit.getText());
+            livro.setAUTOR(ins_liv_aut.getText());
+            livro.setEDITORA(ins_liv_edi.getText());
+            livro.setANO(Integer.parseInt(ins_liv_ano.getText()));
+            livro.setGENERO_ID(Integer.parseInt(ins_liv_gen.getText()));
+            livro.setDESCRICAO(ins_liv_des.getText());
+            livro.setPRECO(Double.parseDouble(ins_liv_pre.getText()));
+            livro.setESTOQUE(Integer.parseInt(ins_liv_est.getText()));
+            livro.setRESERVA(Integer.parseInt(ins_liv_res.getText()));
+
+            em.getTransaction().begin();
+            em.persist(livro);
+            em.getTransaction().commit();
+
+            diag_ins_liv.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_ins_liv_butActionPerformed
 
     private void cons_liv__butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_liv__butActionPerformed
-        Livros livro = em.find(Livros.class, Integer.parseInt(cons_liv_id.getText()));
-        cons_liv_res.setText(livro.toString());
+        try {
+            Livros livro = em.find(Livros.class, Integer.parseInt(cons_liv_id.getText()));
+            cons_liv_res.setText(livro.toString());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_cons_liv__butActionPerformed
 
     private void alt_liv_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_liv_butActionPerformed
-        Livros livros = em.find(Livros.class, Integer.parseInt(alt_liv_id.getText()));
+        try {
+            Livros livros = em.find(Livros.class, Integer.parseInt(alt_liv_id.getText()));
 
-        em.getTransaction().begin();
-            livros.setTITULO(ins_liv_tit.getText());
-            livros.setAUTOR(ins_liv_aut.getText());
-            livros.setEDITORA(ins_liv_edi.getText());
-            livros.setANO(Integer.parseInt(ins_liv_ano.getText()));
-            livros.setGENERO_ID(Integer.parseInt(ins_liv_gen.getText()));
-            livros.setDESCRICAO(ins_liv_des.getText());
-            livros.setPRECO(Double.parseDouble(ins_liv_pre.getText()));
-            livros.setESTOQUE(Integer.parseInt(ins_liv_est.getText()));
-            livros.setRESERVA(Integer.parseInt(ins_liv_res.getText()));
-        em.getTransaction().commit();
+            em.getTransaction().begin();
+            livros.setTITULO(alt_liv_tit.getText());
+            livros.setAUTOR(alt_liv_aut.getText());
+            livros.setEDITORA(alt_liv_edi.getText());
+            livros.setANO(Integer.parseInt(alt_liv_ano.getText()));
+            livros.setGENERO_ID(Integer.parseInt(alt_liv_gen.getText()));
+            livros.setDESCRICAO(alt_liv_des.getText());
+            livros.setPRECO(Double.parseDouble(alt_liv_pre.getText()));
+            livros.setESTOQUE(Integer.parseInt(alt_liv_est.getText()));
+            livros.setRESERVA(Integer.parseInt(alt_liv_res.getText()));
+            em.getTransaction().commit();
 
-        diag_alt_liv.setVisible(false);
+            diag_alt_liv.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_alt_liv_butActionPerformed
 
     private void exc_liv_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_liv_butActionPerformed
-        Livros livro = em.find(Livros.class, Integer.parseInt(exc_liv_id.getText()));
-        em.getTransaction().begin();
-        em.remove(livro);
-        em.getTransaction().commit();
+        try {
+            Livros livro = em.find(Livros.class, Integer.parseInt(exc_liv_id.getText()));
+            em.getTransaction().begin();
+            em.remove(livro);
+            em.getTransaction().commit();
 
-        diag_exc_liv.setVisible(false);
+            diag_exc_liv.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_exc_liv_butActionPerformed
 
     private void ins_liv_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_liv_genActionPerformed
@@ -1439,46 +1464,62 @@ public class Janela extends javax.swing.JFrame {
     }//GEN-LAST:event_ins_liv_genActionPerformed
 
     private void ins_ped_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_ped_butActionPerformed
-        Pedidos pedido = new Pedidos();
+        try {
+            Pedidos pedido = new Pedidos();
 
-        pedido.setPEDIDO_ID(Integer.parseInt(ins_ped_ped.getText()));
-        pedido.setUSUARIO_ID(Integer.parseInt(ins_ped_usu.getText()));
-        pedido.setDATA_PEDIDO(ins_ped_dat.getText());
-        pedido.setTIPO_PAG(ins_ped_pag.getText());
+            pedido.setPEDIDO_ID(Integer.parseInt(ins_ped_ped.getText()));
+            pedido.setUSUARIO_ID(Integer.parseInt(ins_ped_usu.getText()));
+            pedido.setDATA_PEDIDO(ins_ped_dat.getText());
+            pedido.setTIPO_PAG(ins_ped_pag.getText());
 
-        em.getTransaction().begin();
-        em.persist(pedido);
-        em.getTransaction().commit();
+            em.getTransaction().begin();
+            em.persist(pedido);
+            em.getTransaction().commit();
 
-        diag_ins_ped.setVisible(false);
+            diag_ins_ped.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_ins_ped_butActionPerformed
 
     private void cons_ped_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_ped_butActionPerformed
-        Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(cons_ped_id.getText()));
-        cons_ped_res.setText(pedido.toString());
+        try {
+            Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(cons_ped_id.getText()));
+            cons_ped_res.setText(pedido.toString());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_cons_ped_butActionPerformed
 
     private void alt_ped_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_ped_butActionPerformed
-        Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(alt_ped_ped.getText()));
+        try {
+            Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(alt_ped_ped.getText()));
 
-        em.getTransaction().begin();
-        
+            em.getTransaction().begin();
+
             pedido.setUSUARIO_ID(Integer.parseInt(alt_ped_usu.getText()));
             pedido.setDATA_PEDIDO(alt_ped_dat.getText());
             pedido.setTIPO_PAG(alt_ped_pag.getText());
-            
-        em.getTransaction().commit();
 
-        diag_alt_ped.setVisible(false);
+            em.getTransaction().commit();
+
+            diag_alt_ped.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_alt_ped_butActionPerformed
 
     private void exc_ped_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_ped_butActionPerformed
-        Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(exc_ped_id.getText()));
-        em.getTransaction().begin();
-        em.remove(pedido);
-        em.getTransaction().commit();
+        try {
+            Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(exc_ped_id.getText()));
+            em.getTransaction().begin();
+            em.remove(pedido);
+            em.getTransaction().commit();
 
-        diag_exc_ped.setVisible(false);
+            diag_exc_ped.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_exc_ped_butActionPerformed
 
     private void ins_ped_datActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_ped_datActionPerformed
@@ -1538,10 +1579,9 @@ public class Janela extends javax.swing.JFrame {
                 Janela janela = new Janela();
                 janela.setLocationRelativeTo(null);
                 janela.setVisible(true);
-                
+
             }
-            
-            
+
         });
     }
 
