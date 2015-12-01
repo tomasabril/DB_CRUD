@@ -134,6 +134,7 @@ public class Janela extends javax.swing.JFrame {
         alt_liv_ano = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        alt_liv_err = new javax.swing.JLabel();
         diag_alt_ped = new javax.swing.JDialog();
         alt_ped_but = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
@@ -815,6 +816,11 @@ public class Janela extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
         jButton2.setText("Consultar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout diag_alt_livLayout = new javax.swing.GroupLayout(diag_alt_liv.getContentPane());
         diag_alt_liv.getContentPane().setLayout(diag_alt_livLayout);
@@ -822,14 +828,17 @@ public class Janela extends javax.swing.JFrame {
             diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_livLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(diag_alt_livLayout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2))
-                    .addComponent(alt_liv_but)
+                    .addGroup(diag_alt_livLayout.createSequentialGroup()
+                        .addComponent(alt_liv_err)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(alt_liv_but))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -837,14 +846,17 @@ public class Janela extends javax.swing.JFrame {
             diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_livLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alt_liv_but)
+                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(alt_liv_err)
+                    .addGroup(diag_alt_livLayout.createSequentialGroup()
+                        .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_but)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1394,8 +1406,7 @@ public class Janela extends javax.swing.JFrame {
             em.getTransaction().begin();
             genero.setDESCRICAO(alt_gen_desc.getText());
             em.getTransaction().commit();
-
-            diag_alt_gen.setVisible(false);
+            
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -1518,10 +1529,12 @@ public class Janela extends javax.swing.JFrame {
             livros.setESTOQUE(Integer.parseInt(alt_liv_est.getText()));
             livros.setRESERVA(Integer.parseInt(alt_liv_res.getText()));
             em.getTransaction().commit();
-
-            diag_alt_liv.setVisible(false);
+            
+            alt_liv_err.setText("Dados alterados");
+            
         } catch (Exception e) {
             System.out.println(e);
+            alt_liv_err.setText("[!] Ocorreu um erro");
         }
     }//GEN-LAST:event_alt_liv_butActionPerformed
 
@@ -1623,20 +1636,25 @@ public class Janela extends javax.swing.JFrame {
             Generos genero = em.find(Generos.class, Integer.parseInt(alt_gen_id.getText()));
             //Setar campos
             alt_gen_desc.setText(genero.getDESCRICAO());
+            
             //Habilitar campos
             alt_gen_desc.enable();
+            
             //Setar label de erro e habilitar botão
             alt_gen_err.setText("");
             alt_gen_but.setEnabled(true);
             
         } catch (Exception e) {
             System.out.println(e);
-            //Setar campos
-            alt_gen_err.setText("[!] Gênero não encontrado.");
+            
+            //Setar campos como vazios
+            alt_gen_desc.setText("");
+            
             //Desabilitar campos
             alt_gen_desc.disable();
+            
             //Setar label de erro e desabilitar botão
-            alt_gen_desc.setText("");
+            alt_liv_err.setText("[!] Gênero não encontrado.");
             alt_gen_but.setEnabled(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -1644,6 +1662,70 @@ public class Janela extends javax.swing.JFrame {
     private void alt_gen_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_gen_idActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_alt_gen_idActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            Livros livros = em.find(Livros.class, Integer.parseInt(alt_liv_id.getText()));
+            //Setar campos
+            alt_liv_tit.setText(livros.getDESCRICAO());
+            alt_liv_gen.setText(Integer.toString(livros.getGENERO_ID()));
+            alt_liv_des.setText(livros.getDESCRICAO());
+            alt_liv_res.setText(Integer.toString(livros.getRESERVA()));
+            alt_liv_pre.setText(Double.toString(livros.getPRECO()));
+            alt_liv_est.setText(Integer.toString(livros.getESTOQUE()));
+            alt_liv_tit.setText(livros.getTITULO());
+            alt_liv_aut.setText(livros.getAUTOR());
+            alt_liv_edi.setText(livros.getEDITORA());
+            alt_liv_ano.setText(Integer.toString(livros.getANO()));
+            
+            //Habilitar campos
+            alt_liv_gen.enable();
+            alt_liv_des.enable();
+            alt_liv_des.enable();
+            alt_liv_pre.enable();
+            alt_liv_est.enable();
+            alt_liv_tit.enable();
+            alt_liv_aut.enable();
+            alt_liv_edi.enable();
+            alt_liv_ano.enable();
+            alt_liv_res.enable();
+            
+            //Setar label de erro e habilitar botão
+            alt_liv_err.setText("");
+            alt_liv_but.setEnabled(true);
+
+        } catch (Exception e) {
+            System.out.println(e);
+            
+            //Setar campos como vazios
+            alt_liv_gen.setText("");
+            alt_liv_des.setText("");
+            alt_liv_des.setText("");
+            alt_liv_pre.setText("");
+            alt_liv_est.setText("");
+            alt_liv_tit.setText("");
+            alt_liv_aut.setText("");
+            alt_liv_edi.setText("");
+            alt_liv_ano.setText("");
+            alt_liv_res.setText("");
+            
+            //Desabilitar campos
+            alt_liv_gen.disable();
+            alt_liv_des.disable();
+            alt_liv_des.disable();
+            alt_liv_pre.disable();
+            alt_liv_est.disable();
+            alt_liv_tit.disable();
+            alt_liv_aut.disable();
+            alt_liv_edi.disable();
+            alt_liv_ano.disable();
+            alt_liv_res.disable();
+            
+            //Setar label de erro e desabilitar botão
+            alt_liv_err.setText("[!] Livro não encontrado.");
+            alt_liv_but.setEnabled(false);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1715,6 +1797,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton alt_liv_but;
     private javax.swing.JTextField alt_liv_des;
     private javax.swing.JTextField alt_liv_edi;
+    private javax.swing.JLabel alt_liv_err;
     private javax.swing.JTextField alt_liv_est;
     private javax.swing.JTextField alt_liv_gen;
     private javax.swing.JTextField alt_liv_id;
