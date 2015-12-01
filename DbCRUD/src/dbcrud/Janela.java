@@ -87,7 +87,6 @@ public class Janela extends javax.swing.JFrame {
         ins_liv_aut = new javax.swing.JTextField();
         ins_liv_tit = new javax.swing.JTextField();
         diag_ins_ped = new javax.swing.JDialog();
-        jLabel43 = new javax.swing.JLabel();
         ins_ped_but = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
         ins_ped_usu = new javax.swing.JTextField();
@@ -125,14 +124,7 @@ public class Janela extends javax.swing.JFrame {
         alt_liv_but = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         alt_liv_id = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        alt_liv_tit = new javax.swing.JTextField();
-        alt_liv_aut = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        alt_liv_edi = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
-        alt_liv_ano = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         alt_liv_gen = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         alt_liv_des = new javax.swing.JTextField();
@@ -141,18 +133,27 @@ public class Janela extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         alt_liv_pre = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         alt_liv_est = new javax.swing.JTextField();
+        alt_liv_tit = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
+        alt_liv_aut = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        alt_liv_edi = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        alt_liv_ano = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
         diag_alt_ped = new javax.swing.JDialog();
         alt_ped_but = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
         alt_ped_ped = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
         alt_ped_usu = new javax.swing.JTextField();
-        alt_ped_dat = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
-        alt_ped_pag = new javax.swing.JTextField();
+        alt_ped_dat = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
+        alt_ped_pag = new javax.swing.JTextField();
         diag_exc_gen = new javax.swing.JDialog();
         jLabel11 = new javax.swing.JLabel();
         exc_gen_id = new javax.swing.JTextField();
@@ -189,10 +190,11 @@ public class Janela extends javax.swing.JFrame {
         gen_but = new javax.swing.JToggleButton();
 
         diag_ins_gen.setTitle("Inserir Gênero");
-        diag_ins_gen.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_ins_gen.setMinimumSize(null);
         diag_ins_gen.setModal(true);
+        diag_ins_gen.setResizable(false);
 
-        ins_gen_but.setText("inserir");
+        ins_gen_but.setText("Inserir");
         ins_gen_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ins_gen_butActionPerformed(evt);
@@ -201,76 +203,71 @@ public class Janela extends javax.swing.JFrame {
 
         jLabel10.setText("Descrição:");
 
-        jLabel3.setText("id:");
+        jLabel3.setText("ID:");
 
         javax.swing.GroupLayout diag_ins_genLayout = new javax.swing.GroupLayout(diag_ins_gen.getContentPane());
         diag_ins_gen.getContentPane().setLayout(diag_ins_genLayout);
         diag_ins_genLayout.setHorizontalGroup(
             diag_ins_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_ins_genLayout.createSequentialGroup()
-                .addGroup(diag_ins_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(diag_ins_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ins_gen_but)
                     .addGroup(diag_ins_genLayout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(ins_gen_but))
-                    .addGroup(diag_ins_genLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel10))
-                    .addGroup(diag_ins_genLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(diag_ins_genLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(diag_ins_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(ins_gen_id, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ins_gen_desc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
-                .addContainerGap(179, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ins_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ins_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diag_ins_genLayout.setVerticalGroup(
             diag_ins_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_ins_genLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ins_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ins_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(diag_ins_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(ins_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(ins_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(ins_gen_but)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_ins_liv.setTitle("Inserir Livro");
-        diag_ins_liv.setMinimumSize(new java.awt.Dimension(400, 600));
+        diag_ins_liv.setMaximumSize(null);
         diag_ins_liv.setModal(true);
+        diag_ins_liv.setResizable(false);
 
-        ins_liv_but.setText("inserir");
+        ins_liv_but.setText("Inserir");
         ins_liv_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ins_liv_butActionPerformed(evt);
             }
         });
 
-        jLabel15.setText("titulo:");
+        jLabel15.setText("Título:");
 
-        jLabel16.setText("id:");
+        jLabel16.setText("ID:");
 
-        jLabel24.setText("autor");
+        jLabel24.setText("Autor:");
 
-        jLabel25.setText("editora");
+        jLabel25.setText("Editora:");
 
-        jLabel26.setText("ano");
+        jLabel26.setText("Ano:");
 
-        jLabel27.setText("GENERO_ID");
+        jLabel27.setText("GENERO_ID:");
 
-        jLabel28.setText("descricao");
+        jLabel28.setText("Descrição:");
 
-        jLabel29.setText("preco");
+        jLabel29.setText("Preço:");
 
-        jLabel30.setText("reserva");
+        jLabel30.setText("Reserva:");
 
-        jLabel31.setText("estoque");
+        jLabel31.setText("Estoque:");
 
         ins_liv_gen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,123 +279,114 @@ public class Janela extends javax.swing.JFrame {
         diag_ins_liv.getContentPane().setLayout(diag_ins_livLayout);
         diag_ins_livLayout.setHorizontalGroup(
             diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diag_ins_livLayout.createSequentialGroup()
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(ins_liv_but))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ins_liv_id, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
-                .addGap(169, 169, 169))
-            .addGroup(diag_ins_livLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_ins_livLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_aut, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_edi))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_ano, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_gen))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
+                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_livLayout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_des, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel29)
+                        .addComponent(ins_liv_des))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_livLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_pre))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel31)
+                        .addComponent(ins_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_est, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
-                        .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_res))
-                    .addGroup(diag_ins_livLayout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_liv_tit, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
-                .addGap(159, 159, 159))
+                        .addComponent(ins_liv_tit))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_livLayout.createSequentialGroup()
+                        .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_livLayout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_liv_edi))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_livLayout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_liv_aut, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(diag_ins_livLayout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_liv_ano))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_ins_livLayout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_liv_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_livLayout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ins_liv_pre, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ins_liv_est, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(diag_ins_livLayout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_liv_res))
+                            .addGroup(diag_ins_livLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(ins_liv_but)))))
+                .addContainerGap())
         );
         diag_ins_livLayout.setVerticalGroup(
             diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_ins_livLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(ins_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ins_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15)
-                    .addComponent(ins_liv_tit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ins_liv_tit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(ins_liv_aut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel25)
-                    .addComponent(ins_liv_edi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ins_liv_aut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26)
                     .addComponent(ins_liv_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ins_liv_edi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27)
-                    .addComponent(ins_liv_gen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ins_liv_gen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(ins_liv_des, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_ins_livLayout.createSequentialGroup()
-                        .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(ins_liv_pre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel31))
-                    .addComponent(ins_liv_est, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ins_liv_res, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(diag_ins_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ins_liv_pre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31)
+                    .addComponent(ins_liv_est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30)
+                    .addComponent(ins_liv_res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29))
+                .addGap(26, 26, 26)
                 .addComponent(ins_liv_but)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_ins_ped.setTitle("Inserir Pedido");
-        diag_ins_ped.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_ins_ped.setMaximumSize(null);
+        diag_ins_ped.setMinimumSize(null);
         diag_ins_ped.setModal(true);
+        diag_ins_ped.setResizable(false);
 
-        jLabel43.setText("Genero");
-
-        ins_ped_but.setText("inserir");
+        ins_ped_but.setText("Inserir");
         ins_ped_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ins_ped_butActionPerformed(evt);
             }
         });
 
-        jLabel44.setText("USUARIO_ID");
+        jLabel44.setText("USUARIO_ID:");
 
-        jLabel45.setText("PEDIDO_ID");
+        jLabel45.setText("PEDIDO_ID:");
 
         ins_ped_dat.setText("2008-7-04");
         ins_ped_dat.addActionListener(new java.awt.event.ActionListener() {
@@ -407,77 +395,67 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        jLabel53.setText("data pedido(tipo mysql DATE)");
+        jLabel53.setText("Data:");
 
-        jLabel54.setText("tipo pagamento(small int)");
+        jLabel54.setText("Pagamento:");
 
         javax.swing.GroupLayout diag_ins_pedLayout = new javax.swing.GroupLayout(diag_ins_ped.getContentPane());
         diag_ins_ped.getContentPane().setLayout(diag_ins_pedLayout);
         diag_ins_pedLayout.setHorizontalGroup(
             diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_ins_pedLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel43))
-                    .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                        .addGap(161, 161, 161)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(ins_ped_but))
-                    .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel44)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                        .addContainerGap()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_pedLayout.createSequentialGroup()
                         .addComponent(jLabel45)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(ins_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ins_ped_usu, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_pedLayout.createSequentialGroup()
                         .addComponent(jLabel53)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(diag_ins_pedLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(ins_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel54)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_pag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                        .addComponent(ins_ped_pag)))
+                .addContainerGap())
         );
         diag_ins_pedLayout.setVerticalGroup(
             diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_ins_pedLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel43)
-                .addGap(27, 27, 27)
                 .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ins_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel45)
-                    .addComponent(ins_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
                     .addComponent(ins_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53)
-                    .addComponent(ins_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ins_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel54)
                     .addComponent(ins_ped_pag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ins_ped_but)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_cons_gen.setTitle("Consultar Gêneros");
-        diag_cons_gen.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_cons_gen.setMaximumSize(null);
+        diag_cons_gen.setMinimumSize(null);
         diag_cons_gen.setModal(true);
+        diag_cons_gen.setResizable(false);
 
-        jLabel4.setText("ID");
+        jLabel4.setText("ID:");
 
-        cons_gen_but.setText("Find");
+        cons_gen_but.setText("Consultar");
         cons_gen_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cons_gen_butActionPerformed(evt);
@@ -486,6 +464,8 @@ public class Janela extends javax.swing.JFrame {
 
         cons_gen_res.setColumns(20);
         cons_gen_res.setRows(5);
+        cons_gen_res.setEnabled(false);
+        cons_gen_res.setFocusable(false);
         jScrollPane1.setViewportView(cons_gen_res);
 
         javax.swing.GroupLayout diag_cons_genLayout = new javax.swing.GroupLayout(diag_cons_gen.getContentPane());
@@ -494,41 +474,39 @@ public class Janela extends javax.swing.JFrame {
             diag_cons_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_cons_genLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_cons_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(cons_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(diag_cons_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(diag_cons_genLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cons_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cons_gen_but)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_cons_genLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cons_gen_but)
-                .addGap(169, 169, 169))
         );
         diag_cons_genLayout.setVerticalGroup(
             diag_cons_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_cons_genLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(diag_cons_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(diag_cons_genLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel4)
+                    .addGroup(diag_cons_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cons_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(cons_gen_but)
-                .addContainerGap())
+                        .addComponent(cons_gen_but)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_cons_liv.setTitle("Consultar Livros");
-        diag_cons_liv.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_cons_liv.setMaximumSize(null);
+        diag_cons_liv.setMinimumSize(null);
         diag_cons_liv.setModal(true);
+        diag_cons_liv.setResizable(false);
 
-        jLabel18.setText("ID");
+        jLabel18.setText("ID:");
 
-        cons_liv__but.setText("Find");
+        cons_liv__but.setText("Consultar");
         cons_liv__but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cons_liv__butActionPerformed(evt);
@@ -537,6 +515,8 @@ public class Janela extends javax.swing.JFrame {
 
         cons_liv_res.setColumns(20);
         cons_liv_res.setRows(5);
+        cons_liv_res.setEnabled(false);
+        cons_liv_res.setFocusable(false);
         jScrollPane2.setViewportView(cons_liv_res);
 
         javax.swing.GroupLayout diag_cons_livLayout = new javax.swing.GroupLayout(diag_cons_liv.getContentPane());
@@ -546,40 +526,39 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(diag_cons_livLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2)
+                    .addGroup(diag_cons_livLayout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cons_liv__but)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_cons_livLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cons_liv__but)
-                .addGap(169, 169, 169))
         );
         diag_cons_livLayout.setVerticalGroup(
             diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_cons_livLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(diag_cons_livLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel18)
+                    .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(cons_liv__but)
-                .addContainerGap())
+                        .addComponent(cons_liv__but)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_cons_ped.setTitle("Consultar Pedidos");
-        diag_cons_ped.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_cons_ped.setMaximumSize(null);
+        diag_cons_ped.setMinimumSize(null);
         diag_cons_ped.setModal(true);
+        diag_cons_ped.setResizable(false);
 
-        jLabel47.setText("ID");
+        jLabel47.setText("ID:");
 
-        cons_ped_but.setText("Find");
+        cons_ped_but.setText("Consultar");
         cons_ped_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cons_ped_butActionPerformed(evt);
@@ -588,6 +567,8 @@ public class Janela extends javax.swing.JFrame {
 
         cons_ped_res.setColumns(20);
         cons_ped_res.setRows(5);
+        cons_ped_res.setEnabled(false);
+        cons_ped_res.setFocusable(false);
         jScrollPane3.setViewportView(cons_ped_res);
 
         javax.swing.GroupLayout diag_cons_pedLayout = new javax.swing.GroupLayout(diag_cons_ped.getContentPane());
@@ -596,48 +577,46 @@ public class Janela extends javax.swing.JFrame {
             diag_cons_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_cons_pedLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_cons_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel47)
-                    .addComponent(cons_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_cons_pedLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cons_ped_but)
-                .addGap(169, 169, 169))
+                .addGroup(diag_cons_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3)
+                    .addGroup(diag_cons_pedLayout.createSequentialGroup()
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cons_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cons_ped_but)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diag_cons_pedLayout.setVerticalGroup(
             diag_cons_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_cons_pedLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(diag_cons_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(diag_cons_pedLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel47)
+                    .addGroup(diag_cons_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cons_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(cons_ped_but)
-                .addContainerGap())
+                        .addComponent(cons_ped_but)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_alt_gen.setTitle("Alterar Gênero");
-        diag_alt_gen.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_alt_gen.setMaximumSize(null);
+        diag_alt_gen.setMinimumSize(null);
         diag_alt_gen.setModal(true);
+        diag_alt_gen.setResizable(false);
 
-        alt_gen_but.setText("Alter");
+        alt_gen_but.setText("Alterar");
         alt_gen_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alt_gen_butActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("id do campo para alterar");
+        jLabel6.setText("ID:");
 
-        jLabel7.setText("nova descricao");
+        jLabel7.setText("Nova Descrição:");
 
         javax.swing.GroupLayout diag_alt_genLayout = new javax.swing.GroupLayout(diag_alt_gen.getContentPane());
         diag_alt_gen.getContentPane().setLayout(diag_alt_genLayout);
@@ -645,62 +624,147 @@ public class Janela extends javax.swing.JFrame {
             diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_genLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(30, 30, 30)
-                .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alt_gen_but))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_genLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(alt_gen_but)
+                .addContainerGap())
         );
         diag_alt_genLayout.setVerticalGroup(
             diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_genLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
                     .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alt_gen_but)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_alt_liv.setTitle("Alterar Livro");
-        diag_alt_liv.setMinimumSize(new java.awt.Dimension(400, 600));
+        diag_alt_liv.setMaximumSize(null);
+        diag_alt_liv.setMinimumSize(null);
         diag_alt_liv.setModal(true);
+        diag_alt_liv.setResizable(false);
 
-        alt_liv_but.setText("Alter");
+        alt_liv_but.setText("Alterar");
         alt_liv_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alt_liv_butActionPerformed(evt);
             }
         });
 
-        jLabel20.setText("id do objeto a ser alterado");
+        jLabel20.setText("ID:");
 
-        jLabel21.setText("novo titulo");
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Novos dados"));
 
-        jLabel32.setText("novo autor");
+        jLabel35.setText("GENERO_ID:");
 
-        jLabel33.setText("nova editora");
+        jLabel36.setText("Descrição:");
 
-        jLabel34.setText("novo ano");
+        jLabel37.setText("Reserva:");
 
-        jLabel35.setText("novo GENERO_ID");
+        jLabel38.setText("Preço:");
 
-        jLabel36.setText("nova descricao");
+        jLabel21.setText("Título:");
 
-        jLabel37.setText("nova reserva");
+        jLabel39.setText("Estoque:");
 
-        jLabel38.setText("novo preco");
+        jLabel32.setText("Autor:");
 
-        jLabel39.setText("novo estoque");
+        jLabel33.setText("Editora:");
+
+        jLabel34.setText("Ano:");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_des))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_edi, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_ano))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_aut))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_tit, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_pre))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_est, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_liv_res, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(14, 14, 14))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(alt_liv_tit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(alt_liv_aut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(alt_liv_edi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34)
+                    .addComponent(alt_liv_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(alt_liv_gen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel38)
+                    .addComponent(alt_liv_pre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(alt_liv_est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel37)
+                    .addComponent(alt_liv_res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(alt_liv_des, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout diag_alt_livLayout = new javax.swing.GroupLayout(diag_alt_liv.getContentPane());
         diag_alt_liv.getContentPane().setLayout(diag_alt_livLayout);
@@ -708,121 +772,84 @@ public class Janela extends javax.swing.JFrame {
             diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_livLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(diag_alt_livLayout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(alt_liv_but))
-                            .addGroup(diag_alt_livLayout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(diag_alt_livLayout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(alt_liv_tit)))
-                        .addGap(0, 149, Short.MAX_VALUE))
-                    .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel32)
+                        .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_aut))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_edi))
-                    .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_ano))
-                    .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_gen))
-                    .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel36)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_des))
-                    .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel37)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_res))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel38)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_pre))
-                    .addGroup(diag_alt_livLayout.createSequentialGroup()
-                        .addComponent(jLabel39)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_est)))
-                .addContainerGap())
+                        .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alt_liv_but)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diag_alt_livLayout.setVerticalGroup(
             diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_livLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(7, 7, 7)
                 .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(alt_liv_tit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(alt_liv_aut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(alt_liv_edi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(alt_liv_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(alt_liv_gen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36)
-                    .addComponent(alt_liv_des, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(alt_liv_pre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(alt_liv_est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(alt_liv_res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(alt_liv_but)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_alt_ped.setTitle("Alterar Pedido");
-        diag_alt_ped.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_alt_ped.setMaximumSize(null);
+        diag_alt_ped.setMinimumSize(null);
         diag_alt_ped.setModal(true);
+        diag_alt_ped.setResizable(false);
 
-        alt_ped_but.setText("Alter");
+        alt_ped_but.setText("Alterar");
         alt_ped_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alt_ped_butActionPerformed(evt);
             }
         });
 
-        jLabel49.setText("PEDIDO_ID do campo para alterar");
+        jLabel49.setText("PEDIDO_ID:");
 
-        jLabel50.setText("USUARIO_ID");
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Novos dados"));
 
-        jLabel55.setText("data pedido");
+        jLabel50.setText("USUARIO_ID:");
 
-        jLabel56.setText("tipo pagamento(string)");
+        jLabel55.setText("Data:");
+
+        jLabel56.setText("Pagamento:");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_ped_pag))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alt_ped_dat))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(alt_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(alt_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(alt_ped_pag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56)))
+        );
 
         javax.swing.GroupLayout diag_alt_pedLayout = new javax.swing.GroupLayout(diag_alt_ped.getContentPane());
         diag_alt_ped.getContentPane().setLayout(diag_alt_pedLayout);
@@ -830,61 +857,38 @@ public class Janela extends javax.swing.JFrame {
             diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_pedLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(alt_ped_but)
                     .addGroup(diag_alt_pedLayout.createSequentialGroup()
                         .addComponent(jLabel49)
-                        .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(alt_ped_but))
-                            .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                        .addComponent(jLabel50)
-                        .addGap(18, 18, 18)
-                        .addComponent(alt_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                        .addComponent(jLabel55)
-                        .addGap(18, 18, 18)
-                        .addComponent(alt_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                        .addComponent(jLabel56)
-                        .addGap(18, 18, 18)
-                        .addComponent(alt_ped_pag, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diag_alt_pedLayout.setVerticalGroup(
             diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_alt_pedLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addContainerGap()
                 .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
                 .addGap(18, 18, 18)
-                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel50)
-                    .addComponent(alt_ped_usu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel55)
-                    .addComponent(alt_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diag_alt_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel56)
-                    .addComponent(alt_ped_pag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alt_ped_but)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_exc_gen.setTitle("Excluir Gênero");
-        diag_exc_gen.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_exc_gen.setMaximumSize(null);
+        diag_exc_gen.setMinimumSize(null);
         diag_exc_gen.setModal(true);
+        diag_exc_gen.setResizable(false);
 
-        jLabel11.setText("ID do objeto a ser excluido:");
+        jLabel11.setText("ID:");
 
-        exc_gen_but.setText("Exclude");
+        exc_gen_but.setText("Excluir");
         exc_gen_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exc_gen_butActionPerformed(evt);
@@ -896,36 +900,38 @@ public class Janela extends javax.swing.JFrame {
         diag_exc_genLayout.setHorizontalGroup(
             diag_exc_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_exc_genLayout.createSequentialGroup()
-                .addGroup(diag_exc_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(diag_exc_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(diag_exc_genLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(diag_exc_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(exc_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 71, Short.MAX_VALUE)
+                        .addComponent(exc_gen_but))
                     .addGroup(diag_exc_genLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(exc_gen_but)))
-                .addContainerGap(178, Short.MAX_VALUE))
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exc_gen_id)))
+                .addContainerGap())
         );
         diag_exc_genLayout.setVerticalGroup(
             diag_exc_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_exc_genLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel11)
+                .addContainerGap()
+                .addGroup(diag_exc_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exc_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exc_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(exc_gen_but)
-                .addGap(19, 19, 19))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_exc_liv.setTitle("Excluir Livro");
-        diag_exc_liv.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_exc_liv.setMaximumSize(null);
+        diag_exc_liv.setMinimumSize(null);
         diag_exc_liv.setModal(true);
+        diag_exc_liv.setResizable(false);
 
-        jLabel23.setText("ID do objeto a ser excluido:");
+        jLabel23.setText("ID:");
 
-        exc_liv_but.setText("Exclude");
+        exc_liv_but.setText("Excluir");
         exc_liv_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exc_liv_butActionPerformed(evt);
@@ -937,34 +943,34 @@ public class Janela extends javax.swing.JFrame {
         diag_exc_livLayout.setHorizontalGroup(
             diag_exc_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_exc_livLayout.createSequentialGroup()
-                .addGroup(diag_exc_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(diag_exc_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(exc_liv_but)
                     .addGroup(diag_exc_livLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(diag_exc_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(exc_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(diag_exc_livLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(exc_liv_but)))
-                .addContainerGap(178, Short.MAX_VALUE))
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exc_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diag_exc_livLayout.setVerticalGroup(
             diag_exc_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_exc_livLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel23)
+                .addContainerGap()
+                .addGroup(diag_exc_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exc_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exc_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
                 .addComponent(exc_liv_but)
-                .addGap(19, 19, 19))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         diag_exc_ped.setTitle("Excluir Pedido");
-        diag_exc_ped.setMinimumSize(new java.awt.Dimension(400, 300));
+        diag_exc_ped.setMaximumSize(null);
+        diag_exc_ped.setMinimumSize(null);
         diag_exc_ped.setModal(true);
+        diag_exc_ped.setResizable(false);
 
-        jLabel52.setText("ID do objeto a ser excluido:");
+        jLabel52.setText("ID:");
 
         exc_ped_but.setText("Exclude");
         exc_ped_but.addActionListener(new java.awt.event.ActionListener() {
@@ -978,31 +984,30 @@ public class Janela extends javax.swing.JFrame {
         diag_exc_pedLayout.setHorizontalGroup(
             diag_exc_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_exc_pedLayout.createSequentialGroup()
-                .addGroup(diag_exc_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(diag_exc_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(exc_ped_but)
                     .addGroup(diag_exc_pedLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(diag_exc_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel52)
-                            .addComponent(exc_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(diag_exc_pedLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(exc_ped_but)))
-                .addContainerGap(178, Short.MAX_VALUE))
+                        .addComponent(jLabel52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exc_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diag_exc_pedLayout.setVerticalGroup(
             diag_exc_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_exc_pedLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel52)
+                .addContainerGap()
+                .addGroup(diag_exc_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel52)
+                    .addComponent(exc_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exc_ped_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(exc_ped_but)
-                .addGap(19, 19, 19))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CRUD em JPA");
+        setLocation(new java.awt.Point(0, 0));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(190, 193, 199));
@@ -1173,6 +1178,8 @@ public class Janela extends javax.swing.JFrame {
 
         butg_Tabelas.add(ped_but);
         ped_but.setText("Pedido");
+        ped_but.setFocusPainted(false);
+        ped_but.setFocusable(false);
         ped_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ped_butActionPerformed(evt);
@@ -1181,6 +1188,8 @@ public class Janela extends javax.swing.JFrame {
 
         butg_Tabelas.add(liv_but);
         liv_but.setText("Livro");
+        liv_but.setFocusPainted(false);
+        liv_but.setFocusable(false);
         liv_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 liv_butActionPerformed(evt);
@@ -1190,6 +1199,8 @@ public class Janela extends javax.swing.JFrame {
         butg_Tabelas.add(gen_but);
         gen_but.setSelected(true);
         gen_but.setText("Gêneros");
+        gen_but.setFocusPainted(false);
+        gen_but.setFocusable(false);
         gen_but.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gen_butActionPerformed(evt);
@@ -1202,11 +1213,14 @@ public class Janela extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gen_but, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(liv_but, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ped_but, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(liv_but, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ped_but, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1255,7 +1269,10 @@ public class Janela extends javax.swing.JFrame {
 
     private void ins_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_genActionPerformed
         // TODO add your handling code here:
+        diag_ins_gen.pack();
+        diag_ins_gen.setLocationRelativeTo(null);
         diag_ins_gen.setVisible(true);
+        
     }//GEN-LAST:event_ins_genActionPerformed
 
     private void ins_gen_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_gen_butActionPerformed
@@ -1268,12 +1285,14 @@ public class Janela extends javax.swing.JFrame {
         em.persist(genero);
         em.getTransaction().commit();
         
+        diag_ins_gen.pack();
+        diag_ins_gen.setLocationRelativeTo(null);
         diag_ins_gen.setVisible(false);
     }//GEN-LAST:event_ins_gen_butActionPerformed
 
     private void cons_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_genActionPerformed
-        // TODO add your handling code here:
-        //consulta
+        diag_cons_gen.pack();
+        diag_cons_gen.setLocationRelativeTo(null);
         diag_cons_gen.setVisible(true);
     }//GEN-LAST:event_cons_genActionPerformed
 
@@ -1284,8 +1303,8 @@ public class Janela extends javax.swing.JFrame {
     }//GEN-LAST:event_cons_gen_butActionPerformed
 
     private void alt_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_genActionPerformed
-        // TODO add your handling code here:
-        //alter
+        diag_alt_gen.pack();
+        diag_alt_gen.setLocationRelativeTo(null);
         diag_alt_gen.setVisible(true);
     }//GEN-LAST:event_alt_genActionPerformed
 
@@ -1309,48 +1328,56 @@ public class Janela extends javax.swing.JFrame {
     }//GEN-LAST:event_exc_gen_butActionPerformed
 
     private void exc_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_genActionPerformed
-        // TODO add your handling code here:
+        diag_exc_gen.pack();
+        diag_exc_gen.setLocationRelativeTo(null);
         diag_exc_gen.setVisible(true);
     }//GEN-LAST:event_exc_genActionPerformed
 
     private void cons_livActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_livActionPerformed
-        // TODO add your handling code here:
-        //consulta
+        diag_cons_liv.pack();
+        diag_cons_liv.setLocationRelativeTo(null);
         diag_cons_liv.setVisible(true);
     }//GEN-LAST:event_cons_livActionPerformed
 
     private void exc_livActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_livActionPerformed
-        // TODO add your handling code here:
+        diag_exc_liv.pack();
+        diag_exc_liv.setLocationRelativeTo(null);
         diag_exc_liv.setVisible(true);
     }//GEN-LAST:event_exc_livActionPerformed
 
     private void alt_livActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_livActionPerformed
-        // TODO add your handling code here:
+        diag_alt_liv.pack();
+        diag_alt_liv.setLocationRelativeTo(null);
         diag_alt_liv.setVisible(true);
     }//GEN-LAST:event_alt_livActionPerformed
 
     private void ins_livActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_livActionPerformed
-        // TODO add your handling code here:
+        diag_ins_liv.pack();
+        diag_ins_liv.setLocationRelativeTo(null);
         diag_ins_liv.setVisible(true);
     }//GEN-LAST:event_ins_livActionPerformed
 
     private void cons_pedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_pedActionPerformed
-        // TODO add your handling code here:
+        diag_cons_ped.pack();
+        diag_cons_ped.setLocationRelativeTo(null);
         diag_cons_ped.setVisible(true);
     }//GEN-LAST:event_cons_pedActionPerformed
 
     private void exc_pedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exc_pedActionPerformed
-        // TODO add your handling code here:
+        diag_exc_ped.pack();
+        diag_exc_ped.setLocationRelativeTo(null);
         diag_exc_ped.setVisible(true);
     }//GEN-LAST:event_exc_pedActionPerformed
 
     private void alt_pedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_pedActionPerformed
-        // TODO add your handling code here:
+        diag_alt_ped.pack();
+        diag_alt_ped.setLocationRelativeTo(null);
         diag_alt_ped.setVisible(true);
     }//GEN-LAST:event_alt_pedActionPerformed
 
     private void ins_pedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ins_pedActionPerformed
-        // TODO add your handling code here:
+        diag_ins_ped.pack();
+        diag_ins_ped.setLocationRelativeTo(null);
         diag_ins_ped.setVisible(true);
     }//GEN-LAST:event_ins_pedActionPerformed
 
@@ -1508,8 +1535,13 @@ public class Janela extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Janela().setVisible(true);
+                Janela janela = new Janela();
+                janela.setLocationRelativeTo(null);
+                janela.setVisible(true);
+                
             }
+            
+            
         });
     }
 
@@ -1631,7 +1663,6 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
@@ -1646,6 +1677,8 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
