@@ -1,8 +1,8 @@
-IF EXISTS DROP TABLE pedidos_detalhe;
-IF EXISTS DROP TABLE livros;
-IF EXISTS DROP TABLE generos;
-IF EXISTS DROP TABLE usuarios;
-IF EXISTS DROP TABLE pedidos;
+DROP TABLE IF EXISTS pedidos_detalhe;
+DROP TABLE IF EXISTS livros;
+DROP TABLE IF EXISTS generos;
+DROP TABLE IF EXISTS usuarios;
+DROP TABLE IF EXISTS pedidos;
 
 CREATE TABLE generos
 (
@@ -16,7 +16,7 @@ INSERT INTO generos VALUES (2, 'Redes de Computadores - Geral');
 INSERT INTO generos VALUES (3, 'Redes TCP/IP');
 INSERT INTO generos VALUES (4, 'Sistemas Operacionais');
 INSERT INTO generos VALUES (5, 'Hardware');
-INSERT INTO generos VALUES (6, 'Orientação a Objetos e UML');
+INSERT INTO generos VALUES (6, 'OrientaÃ§Ã£o a Objetos e UML');
 INSERT INTO generos VALUES (7, 'Bancos de Dados');
 
 
