@@ -443,21 +443,24 @@ public class Janela extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ins_ped_but))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_pedLayout.createSequentialGroup()
-                        .addComponent(jLabel45)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel44)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_usu, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, diag_ins_pedLayout.createSequentialGroup()
-                        .addComponent(jLabel53)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_dat, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel54)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ins_ped_pag)))
+                        .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(diag_ins_pedLayout.createSequentialGroup()
+                                .addComponent(jLabel53)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_ped_dat)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel54)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(diag_ins_pedLayout.createSequentialGroup()
+                                .addComponent(jLabel45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ins_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel44)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(diag_ins_pedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ins_ped_pag)
+                            .addComponent(ins_ped_usu, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         diag_ins_pedLayout.setVerticalGroup(
@@ -585,7 +588,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_cons_ped.setTitle("Consultar Pedidos");
-        diag_cons_ped.setMaximumSize(null);
         diag_cons_ped.setMinimumSize(null);
         diag_cons_ped.setModal(true);
         diag_cons_ped.setResizable(false);
@@ -637,7 +639,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_alt_gen.setTitle("Alterar Gênero");
-        diag_alt_gen.setMaximumSize(null);
         diag_alt_gen.setMinimumSize(null);
         diag_alt_gen.setModal(true);
         diag_alt_gen.setResizable(false);
@@ -729,7 +730,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_alt_liv.setTitle("Alterar Livro");
-        diag_alt_liv.setMaximumSize(null);
         diag_alt_liv.setMinimumSize(null);
         diag_alt_liv.setModal(true);
         diag_alt_liv.setResizable(false);
@@ -915,7 +915,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_alt_ped.setTitle("Alterar Pedido");
-        diag_alt_ped.setMaximumSize(null);
         diag_alt_ped.setMinimumSize(null);
         diag_alt_ped.setModal(true);
         diag_alt_ped.setResizable(false);
@@ -1028,7 +1027,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_exc_gen.setTitle("Excluir Gênero");
-        diag_exc_gen.setMaximumSize(null);
         diag_exc_gen.setMinimumSize(null);
         diag_exc_gen.setModal(true);
         diag_exc_gen.setResizable(false);
@@ -1210,10 +1208,10 @@ public class Janela extends javax.swing.JFrame {
         gen_pan.setLayout(gen_panLayout);
         gen_panLayout.setHorizontalGroup(
             gen_panLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ins_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(alt_gen)
-            .addComponent(exc_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(cons_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(ins_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(alt_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(exc_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cons_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         gen_panLayout.setVerticalGroup(
             gen_panLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1268,10 +1266,10 @@ public class Janela extends javax.swing.JFrame {
         liv_pan.setLayout(liv_panLayout);
         liv_panLayout.setHorizontalGroup(
             liv_panLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ins_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(alt_liv)
-            .addComponent(exc_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(cons_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(ins_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(alt_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(exc_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cons_liv, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         liv_panLayout.setVerticalGroup(
             liv_panLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1325,10 +1323,10 @@ public class Janela extends javax.swing.JFrame {
         ped_pan.setLayout(ped_panLayout);
         ped_panLayout.setHorizontalGroup(
             ped_panLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ins_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(alt_ped)
-            .addComponent(exc_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(cons_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(ins_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(alt_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(exc_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(cons_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         ped_panLayout.setVerticalGroup(
             ped_panLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1415,7 +1413,7 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(opc_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addComponent(opc_panel)
                 .addGap(25, 25, 25))
         );
         jPanel2Layout.setVerticalGroup(

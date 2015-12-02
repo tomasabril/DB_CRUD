@@ -325,22 +325,28 @@
                           <Component id="ins_ped_but" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ins_ped_ped" min="-2" pref="66" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ins_ped_usu" pref="64" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ins_ped_dat" min="-2" pref="69" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ins_ped_pag" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ins_ped_dat" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ins_ped_ped" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ins_ped_pag" max="32767" attributes="0"/>
+                              <Component id="ins_ped_usu" pref="64" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -590,9 +596,6 @@
     <Container class="javax.swing.JDialog" name="diag_cons_ped">
       <Properties>
         <Property name="title" type="java.lang.String" value="Consultar Pedidos"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
@@ -678,9 +681,6 @@
     <Container class="javax.swing.JDialog" name="diag_alt_gen">
       <Properties>
         <Property name="title" type="java.lang.String" value="Alterar G&#xea;nero"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
@@ -816,9 +816,6 @@
     <Container class="javax.swing.JDialog" name="diag_alt_liv">
       <Properties>
         <Property name="title" type="java.lang.String" value="Alterar Livro"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
@@ -1114,9 +1111,6 @@
     <Container class="javax.swing.JDialog" name="diag_alt_ped">
       <Properties>
         <Property name="title" type="java.lang.String" value="Alterar Pedido"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
@@ -1296,9 +1290,6 @@
     <Container class="javax.swing.JDialog" name="diag_exc_gen">
       <Properties>
         <Property name="title" type="java.lang.String" value="Excluir G&#xea;nero"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="null"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="null"/>
         </Property>
@@ -1556,7 +1547,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <Component id="jPanel1" min="-2" pref="94" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="opc_panel" pref="98" max="32767" attributes="0"/>
+                  <Component id="opc_panel" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1588,10 +1579,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ins_gen" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="alt_gen" min="-2" max="-2" attributes="0"/>
-                      <Component id="exc_gen" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="cons_gen" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="ins_gen" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="alt_gen" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="exc_gen" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="cons_gen" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1665,10 +1656,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ins_liv" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="alt_liv" min="-2" max="-2" attributes="0"/>
-                      <Component id="exc_liv" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="cons_liv" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="ins_liv" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="alt_liv" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="exc_liv" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="cons_liv" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1742,10 +1733,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ins_ped" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="alt_ped" min="-2" max="-2" attributes="0"/>
-                      <Component id="exc_ped" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="cons_ped" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="ins_ped" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="alt_ped" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="exc_ped" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="cons_ped" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
