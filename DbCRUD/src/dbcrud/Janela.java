@@ -6,6 +6,7 @@ import javax.persistence.Persistence;
 import javax.swing.JPanel;
 import tabelas.*;
 
+
 /**
  * @author Tomás Abril
  * @author Daniel Silva Curi
@@ -19,16 +20,38 @@ public class Janela extends javax.swing.JFrame {
     JPanel lastpanel = new JPanel();
 
 
+    
     public Janela() {
         initComponents();
+        
+        
+        // Interface - define botões padrão
+        diag_ins_gen.getRootPane().setDefaultButton(ins_gen_but);
+        diag_ins_liv.getRootPane().setDefaultButton(ins_liv_but);
+        diag_ins_ped.getRootPane().setDefaultButton(ins_ped_but);
 
-        //fazer conexao com o banco de dados
+        diag_alt_gen.getRootPane().setDefaultButton(alt_gen_cons);
+        diag_alt_liv.getRootPane().setDefaultButton(alt_liv_cons);
+        diag_alt_ped.getRootPane().setDefaultButton(alt_ped_cons);
+        
+        diag_cons_gen.getRootPane().setDefaultButton(cons_gen_but);
+        diag_cons_liv.getRootPane().setDefaultButton(cons_liv_but);
+        diag_cons_ped.getRootPane().setDefaultButton(cons_ped_but);
+        
+        diag_exc_gen.getRootPane().setDefaultButton(exc_gen_but);
+        diag_exc_liv.getRootPane().setDefaultButton(exc_liv_but);
+        diag_exc_ped.getRootPane().setDefaultButton(exc_ped_but);
+
+        
+        //Faz conexao com o banco de dados
         emf = Persistence.createEntityManagerFactory("DbCRUDPU");
         em = emf.createEntityManager();
 
         lastpanel = gen_pan;
     }
+    
 
+    
     private void trocaTela(JPanel newpanel) {
         lastpanel.setVisible(false);
         newpanel.setVisible(true);
@@ -36,6 +59,8 @@ public class Janela extends javax.swing.JFrame {
         opc_panel.setLayer(lastpanel, x++);
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,7 +136,7 @@ public class Janela extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         alt_gen_desc = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        alt_gen_cons = new javax.swing.JButton();
         alt_gen_err = new javax.swing.JLabel();
         diag_alt_liv = new javax.swing.JDialog();
         alt_liv_but = new javax.swing.JButton();
@@ -136,7 +161,7 @@ public class Janela extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         alt_liv_ano = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        alt_liv_cons = new javax.swing.JButton();
         alt_liv_err = new javax.swing.JLabel();
         diag_alt_ped = new javax.swing.JDialog();
         alt_ped_but = new javax.swing.JButton();
@@ -149,7 +174,7 @@ public class Janela extends javax.swing.JFrame {
         alt_ped_dat = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         alt_ped_pag = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        alt_ped_cons = new javax.swing.JButton();
         alt_ped_err = new javax.swing.JLabel();
         diag_exc_gen = new javax.swing.JDialog();
         jLabel11 = new javax.swing.JLabel();
@@ -655,11 +680,11 @@ public class Janela extends javax.swing.JFrame {
                 .addComponent(alt_gen_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButton1.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
-        jButton1.setText("Consultar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        alt_gen_cons.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        alt_gen_cons.setText("Consultar");
+        alt_gen_cons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                alt_gen_consActionPerformed(evt);
             }
         });
 
@@ -682,7 +707,7 @@ public class Janela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(alt_gen_cons)
                 .addContainerGap())
         );
         diag_alt_genLayout.setVerticalGroup(
@@ -695,7 +720,7 @@ public class Janela extends javax.swing.JFrame {
                         .addGroup(diag_alt_genLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(alt_gen_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
-                            .addComponent(jButton1))
+                            .addComponent(alt_gen_cons))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -798,7 +823,7 @@ public class Janela extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel34)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alt_liv_ano))
+                        .addComponent(alt_liv_ano, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -841,11 +866,11 @@ public class Janela extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton2.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
-        jButton2.setText("Consultar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        alt_liv_cons.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        alt_liv_cons.setText("Consultar");
+        alt_liv_cons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                alt_liv_consActionPerformed(evt);
             }
         });
 
@@ -856,12 +881,12 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(diag_alt_livLayout.createSequentialGroup()
                 .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_livLayout.createSequentialGroup()
-                        .addContainerGap(191, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
+                        .addComponent(alt_liv_cons))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diag_alt_livLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(alt_liv_err)
@@ -879,7 +904,7 @@ public class Janela extends javax.swing.JFrame {
                 .addGroup(diag_alt_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(alt_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(alt_liv_cons))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -952,11 +977,11 @@ public class Janela extends javax.swing.JFrame {
                     .addComponent(jLabel56)))
         );
 
-        jButton3.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
-        jButton3.setText("Consultar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        alt_ped_cons.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        alt_ped_cons.setText("Consultar");
+        alt_ped_cons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                alt_ped_consActionPerformed(evt);
             }
         });
 
@@ -979,7 +1004,7 @@ public class Janela extends javax.swing.JFrame {
                                 .addComponent(jLabel49)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(alt_ped_cons, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(alt_ped_but, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
@@ -994,7 +1019,7 @@ public class Janela extends javax.swing.JFrame {
                             .addComponent(alt_ped_ped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel49))
                         .addGap(0, 0, 0)
-                        .addComponent(jButton3)
+                        .addComponent(alt_ped_cons)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1142,12 +1167,14 @@ public class Janela extends javax.swing.JFrame {
         setTitle("CRUD em JPA");
         setResizable(false);
 
-        jPanel2.setBackground(new java.awt.Color(190, 193, 199));
+        jPanel2.setBackground(new java.awt.Color(162, 162, 162));
+        jPanel2.setBorder(null);
 
         opc_panel.setLayout(new javax.swing.OverlayLayout(opc_panel));
 
-        gen_pan.setBackground(new java.awt.Color(190, 193, 199));
+        gen_pan.setBackground(new java.awt.Color(162, 162, 162));
 
+        ins_gen.setBackground(new java.awt.Color(196, 196, 196));
         ins_gen.setText("Inserção");
         ins_gen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1155,6 +1182,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        alt_gen.setBackground(new java.awt.Color(196, 196, 196));
         alt_gen.setText("Alteração");
         alt_gen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1162,6 +1190,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        exc_gen.setBackground(new java.awt.Color(196, 196, 196));
         exc_gen.setText("Exclusão");
         exc_gen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1169,6 +1198,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        cons_gen.setBackground(new java.awt.Color(196, 196, 196));
         cons_gen.setText("Consulta");
         cons_gen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1200,8 +1230,9 @@ public class Janela extends javax.swing.JFrame {
         opc_panel.add(gen_pan);
         opc_panel.setLayer(gen_pan, 1);
 
-        liv_pan.setBackground(new java.awt.Color(190, 193, 199));
+        liv_pan.setBackground(new java.awt.Color(162, 162, 162));
 
+        ins_liv.setBackground(new java.awt.Color(196, 196, 196));
         ins_liv.setText("Inserção");
         ins_liv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1209,6 +1240,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        alt_liv.setBackground(new java.awt.Color(196, 196, 196));
         alt_liv.setText("Alteração");
         alt_liv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1216,6 +1248,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        exc_liv.setBackground(new java.awt.Color(196, 196, 196));
         exc_liv.setText("Exclusão");
         exc_liv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1223,6 +1256,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        cons_liv.setBackground(new java.awt.Color(196, 196, 196));
         cons_liv.setText("Consulta");
         cons_liv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1253,8 +1287,9 @@ public class Janela extends javax.swing.JFrame {
 
         opc_panel.add(liv_pan);
 
-        ped_pan.setBackground(new java.awt.Color(190, 193, 199));
+        ped_pan.setBackground(new java.awt.Color(162, 162, 162));
 
+        ins_ped.setBackground(new java.awt.Color(196, 196, 196));
         ins_ped.setText("Inserção");
         ins_ped.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1262,6 +1297,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        alt_ped.setBackground(new java.awt.Color(196, 196, 196));
         alt_ped.setText("Alteração");
         alt_ped.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1269,6 +1305,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        exc_ped.setBackground(new java.awt.Color(196, 196, 196));
         exc_ped.setText("Exclusão");
         exc_ped.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1276,6 +1313,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        cons_ped.setBackground(new java.awt.Color(196, 196, 196));
         cons_ped.setText("Consulta");
         cons_ped.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1306,8 +1344,10 @@ public class Janela extends javax.swing.JFrame {
 
         opc_panel.add(ped_pan);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 204), null));
 
+        ped_but.setBackground(new java.awt.Color(153, 153, 153));
         butg_Tabelas.add(ped_but);
         ped_but.setText("Pedido");
         ped_but.setFocusPainted(false);
@@ -1318,6 +1358,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        liv_but.setBackground(new java.awt.Color(153, 153, 153));
         butg_Tabelas.add(liv_but);
         liv_but.setText("Livro");
         liv_but.setFocusPainted(false);
@@ -1328,6 +1369,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        gen_but.setBackground(new java.awt.Color(153, 153, 153));
         butg_Tabelas.add(gen_but);
         gen_but.setSelected(true);
         gen_but.setText("Gêneros");
@@ -1373,7 +1415,7 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(opc_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(opc_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1420,9 +1462,6 @@ public class Janela extends javax.swing.JFrame {
             em.getTransaction().begin();
             em.persist(genero);
             em.getTransaction().commit();
-
-            diag_ins_gen.pack();
-            diag_ins_gen.setLocationRelativeTo(null);
             
             ins_gen_err.setText("Gênero inserido");
         } catch (Exception e) {
@@ -1453,8 +1492,10 @@ public class Janela extends javax.swing.JFrame {
 
     private void alt_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_genActionPerformed
         alt_gen_id.setText("");
-        jButton1.doClick();
+        alt_gen_cons.doClick();
         alt_gen_err.setText("");
+        diag_alt_gen.getRootPane().setDefaultButton(alt_gen_cons);
+
         
         diag_alt_gen.pack();
         diag_alt_gen.setLocationRelativeTo(null);
@@ -1522,8 +1563,9 @@ public class Janela extends javax.swing.JFrame {
 
     private void alt_livActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_livActionPerformed
         alt_liv_id.setText("");
-        jButton2.doClick();
+        alt_liv_cons.doClick();
         alt_liv_err.setText("");
+        diag_alt_liv.getRootPane().setDefaultButton(alt_liv_cons);
         
         diag_alt_liv.pack();
         diag_alt_liv.setLocationRelativeTo(null);
@@ -1570,8 +1612,9 @@ public class Janela extends javax.swing.JFrame {
 
     private void alt_pedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_pedActionPerformed
         alt_ped_ped.setText("");
-        jButton3.doClick();
+        alt_ped_cons.doClick();
         alt_ped_err.setText("");
+        diag_alt_ped.getRootPane().setDefaultButton(alt_ped_cons);
         
         diag_alt_ped.pack();
         diag_alt_ped.setLocationRelativeTo(null);
@@ -1755,7 +1798,7 @@ public class Janela extends javax.swing.JFrame {
         trocaTela(ped_pan);
     }//GEN-LAST:event_ped_butActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void alt_gen_consActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_gen_consActionPerformed
         try {
             Generos genero = em.find(Generos.class, Integer.parseInt(alt_gen_id.getText()));
             //Setar campos
@@ -1767,6 +1810,8 @@ public class Janela extends javax.swing.JFrame {
             //Setar label de erro e habilitar botão
             alt_gen_err.setText("");
             alt_gen_but.setEnabled(true);
+            diag_alt_gen.getRootPane().setDefaultButton(alt_gen_but);
+
             
         } catch (Exception e) {
             System.out.println(e);
@@ -1781,13 +1826,13 @@ public class Janela extends javax.swing.JFrame {
             alt_gen_err.setText("[!] Gênero não encontrado.");
             alt_gen_but.setEnabled(false);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_alt_gen_consActionPerformed
 
     private void alt_gen_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_gen_idActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_alt_gen_idActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void alt_liv_consActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_liv_consActionPerformed
         try {
             Livros livros = em.find(Livros.class, Integer.parseInt(alt_liv_id.getText()));
             //Setar campos
@@ -1816,6 +1861,8 @@ public class Janela extends javax.swing.JFrame {
             //Setar label de erro e habilitar botão
             alt_liv_err.setText("");
             alt_liv_but.setEnabled(true);
+            diag_alt_liv.getRootPane().setDefaultButton(alt_liv_but);
+        
 
         } catch (Exception e) {
             System.out.println(e);
@@ -1848,9 +1895,9 @@ public class Janela extends javax.swing.JFrame {
             alt_liv_err.setText("[!] Livro não encontrado.");
             alt_liv_but.setEnabled(false);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_alt_liv_consActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void alt_ped_consActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alt_ped_consActionPerformed
         try {
             Pedidos pedido = em.find(Pedidos.class, Integer.parseInt(alt_ped_ped.getText()));
            
@@ -1868,6 +1915,7 @@ public class Janela extends javax.swing.JFrame {
             //Setar label de erro e habilitar botão
             alt_ped_err.setText("");
             alt_ped_but.setEnabled(true);
+            diag_alt_ped.getRootPane().setDefaultButton(alt_ped_but);
 
         } catch (Exception e) {
             System.out.println(e);
@@ -1886,7 +1934,7 @@ public class Janela extends javax.swing.JFrame {
             alt_ped_err.setText("[!] Pedido não encontrado.");
             alt_ped_but.setEnabled(false);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_alt_ped_consActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1949,6 +1997,7 @@ public class Janela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alt_gen;
     private javax.swing.JButton alt_gen_but;
+    private javax.swing.JButton alt_gen_cons;
     private javax.swing.JTextField alt_gen_desc;
     private javax.swing.JLabel alt_gen_err;
     private javax.swing.JTextField alt_gen_id;
@@ -1956,6 +2005,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField alt_liv_ano;
     private javax.swing.JTextField alt_liv_aut;
     private javax.swing.JButton alt_liv_but;
+    private javax.swing.JButton alt_liv_cons;
     private javax.swing.JTextField alt_liv_des;
     private javax.swing.JTextField alt_liv_edi;
     private javax.swing.JLabel alt_liv_err;
@@ -1967,6 +2017,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField alt_liv_tit;
     private javax.swing.JButton alt_ped;
     private javax.swing.JButton alt_ped_but;
+    private javax.swing.JButton alt_ped_cons;
     private javax.swing.JTextField alt_ped_dat;
     private javax.swing.JLabel alt_ped_err;
     private javax.swing.JTextField alt_ped_pag;
@@ -2036,9 +2087,6 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField ins_ped_pag;
     private javax.swing.JTextField ins_ped_ped;
     private javax.swing.JTextField ins_ped_usu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
