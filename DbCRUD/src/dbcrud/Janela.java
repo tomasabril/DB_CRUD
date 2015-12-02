@@ -455,6 +455,7 @@ public class Janela extends javax.swing.JFrame {
 
         cons_gen_res.setColumns(20);
         cons_gen_res.setRows(5);
+        cons_gen_res.setDisabledTextColor(new java.awt.Color(51, 51, 51));
         cons_gen_res.setEnabled(false);
         cons_gen_res.setFocusable(false);
         jScrollPane1.setViewportView(cons_gen_res);
@@ -505,6 +506,7 @@ public class Janela extends javax.swing.JFrame {
 
         cons_liv_res.setColumns(20);
         cons_liv_res.setRows(5);
+        cons_liv_res.setDisabledTextColor(new java.awt.Color(51, 51, 51));
         cons_liv_res.setEnabled(false);
         cons_liv_res.setFocusable(false);
         jScrollPane2.setViewportView(cons_liv_res);
@@ -516,28 +518,27 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(diag_cons_livLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
                     .addGroup(diag_cons_livLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cons_liv_but)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cons_liv_but)))
                 .addContainerGap())
         );
         diag_cons_livLayout.setVerticalGroup(
             diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diag_cons_livLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cons_liv_but)))
+                .addGroup(diag_cons_livLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cons_liv_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cons_liv_but)
+                    .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         diag_cons_ped.setTitle("Consultar Pedidos");
@@ -557,6 +558,7 @@ public class Janela extends javax.swing.JFrame {
 
         cons_ped_res.setColumns(20);
         cons_ped_res.setRows(5);
+        cons_ped_res.setDisabledTextColor(new java.awt.Color(51, 51, 51));
         cons_ped_res.setEnabled(false);
         cons_ped_res.setFocusable(false);
         jScrollPane3.setViewportView(cons_ped_res);
@@ -864,7 +866,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_alt_ped.setTitle("Alterar Pedido");
-        diag_alt_ped.setMaximumSize(null);
         diag_alt_ped.setMinimumSize(null);
         diag_alt_ped.setModal(true);
         diag_alt_ped.setResizable(false);
@@ -977,7 +978,6 @@ public class Janela extends javax.swing.JFrame {
         );
 
         diag_exc_gen.setTitle("Excluir Gênero");
-        diag_exc_gen.setMaximumSize(null);
         diag_exc_gen.setMinimumSize(null);
         diag_exc_gen.setModal(true);
         diag_exc_gen.setResizable(false);
@@ -1396,7 +1396,7 @@ public class Janela extends javax.swing.JFrame {
     private void cons_gen_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_gen_butActionPerformed
         try {
             Generos genero = em.find(Generos.class, Integer.parseInt(cons_gen_id.getText()));
-            cons_gen_res.setText(genero.getDESCRICAO());
+            cons_gen_res.setText(genero.toString());
             //findGenero.setVisible(false);
         } catch (Exception e) {
             System.out.println(e);
@@ -1673,7 +1673,7 @@ public class Janela extends javax.swing.JFrame {
             alt_gen_desc.disable();
             
             //Setar label de erro e desabilitar botão
-            alt_liv_err.setText("[!] Gênero não encontrado.");
+            alt_gen_err.setText("[!] Gênero não encontrado.");
             alt_gen_but.setEnabled(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -1686,7 +1686,6 @@ public class Janela extends javax.swing.JFrame {
         try {
             Livros livros = em.find(Livros.class, Integer.parseInt(alt_liv_id.getText()));
             //Setar campos
-            alt_liv_tit.setText(livros.getDESCRICAO());
             alt_liv_gen.setText(Integer.toString(livros.getGENERO_ID()));
             alt_liv_des.setText(livros.getDESCRICAO());
             alt_liv_res.setText(Integer.toString(livros.getRESERVA()));

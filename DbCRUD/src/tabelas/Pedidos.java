@@ -82,7 +82,10 @@ public class Pedidos implements Serializable {
 
     @Override
     public String toString() {
-        return "id:" + getPEDIDO_ID() + " - " + "usuario_id:" + getUSUARIO_ID() + " - " + "tipo pag:" + getTIPO_PAG();
+        return "PEDIDO_ID: " + getPEDIDO_ID() +
+                "\n" + "USUARIO_ID: " + getUSUARIO_ID() +
+                "\n" + "Data " + getDATA_PEDIDO() +
+                "\n" + "Tipo de Pagamento:" + getTIPO_PAG();
     }
 
 }

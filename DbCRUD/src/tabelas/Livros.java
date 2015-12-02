@@ -174,6 +174,16 @@ public class Livros implements Serializable {
 
     @Override
     public String toString() {
-        return getLIVRO_ID() + "-" + getTITULO();
+        return "ID: " + getLIVRO_ID() +
+                "\n" + "Título: " + getTITULO() +
+                "\n" + "Autor: " + getAUTOR() +
+                "\n" + "Editora " + getEDITORA() +
+                "\n" + "Ano: " + getANO()+
+                "\n" + "Gênero_ID " + getGENERO_ID() +
+                "\n" + "Preço: " + getPRECO() +
+                "\n" + "Estoque: " + getESTOQUE() +
+                "\n" + "Reserva: " + getRESERVA() +
+                "\n" + "Descrição: " + getDESCRICAO();
+
     }
 }

@@ -45,6 +45,7 @@ public class Generos implements Serializable {
 
     @Override
     public String toString() {
-        return GENERO_ID + "-" + DESCRICAO;
+        return "ID: " + getGENERO_ID() +
+                "\n" + "Descrição: " + getDESCRICAO() ;
     }
 }
